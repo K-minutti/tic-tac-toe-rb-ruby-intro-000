@@ -117,12 +117,14 @@ def winner (board)
   end
 end
 
-
-Define your play method below
 def play(board)
-  counter = 0
-  until counter >= 9
-  counter += 1
+  until over?(board) == true
     turn(board)
- end
+  end
+
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Its a draw"
+  end
 end
